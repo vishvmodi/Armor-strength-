@@ -24,17 +24,25 @@ color:white;
 line-height:1.6;
 }
 
+/* ----- GLOBAL CONTAINER ----- */
+
+section{
+max-width:1200px;
+margin:auto;
+}
+
 /* ---------- NAVBAR ---------- */
 
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
+padding:18px 6%;
 background:black;
 position:sticky;
 top:0;
 z-index:1000;
+flex-wrap:wrap;
 }
 
 .logo{
@@ -46,7 +54,8 @@ color:#ff3c00;
 nav ul{
 display:flex;
 list-style:none;
-gap:30px;
+gap:28px;
+flex-wrap:wrap;
 }
 
 nav ul li a{
@@ -68,17 +77,17 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:40px;
+padding:40px 20px;
 background:url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48") center/cover no-repeat;
 }
 
 .hero h1{
-font-size:60px;
+font-size:clamp(32px,6vw,60px);
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
+font-size:clamp(16px,2.5vw,20px);
 margin-bottom:30px;
 max-width:600px;
 margin-left:auto;
@@ -103,7 +112,7 @@ background:#ff2200;
 /* ---------- FEATURES ---------- */
 
 .features{
-padding:80px 8%;
+padding:80px 6%;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:30px;
@@ -129,12 +138,12 @@ color:#ff3c00;
 /* ---------- TRAINERS ---------- */
 
 .trainers{
-padding:80px 8%;
+padding:80px 6%;
 text-align:center;
 }
 
 .trainers h2{
-font-size:40px;
+font-size:clamp(28px,4vw,40px);
 margin-bottom:40px;
 }
 
@@ -154,6 +163,7 @@ overflow:hidden;
 width:100%;
 height:260px;
 object-fit:cover;
+display:block;
 }
 
 .trainer h4{
@@ -163,12 +173,12 @@ padding:15px;
 /* ---------- PRICING ---------- */
 
 .pricing{
-padding:80px 8%;
+padding:80px 6%;
 text-align:center;
 }
 
 .pricing h2{
-font-size:40px;
+font-size:clamp(28px,4vw,40px);
 margin-bottom:40px;
 }
 
@@ -182,6 +192,11 @@ gap:30px;
 background:#1a1a1a;
 padding:40px;
 border-radius:10px;
+transition:0.3s;
+}
+
+.plan:hover{
+transform:translateY(-6px);
 }
 
 .plan h3{
@@ -211,10 +226,6 @@ font-size:14px;
 
 @media (max-width:900px){
 
-.hero h1{
-font-size:42px;
-}
-
 .features{
 grid-template-columns:repeat(2,1fr);
 }
@@ -240,15 +251,7 @@ gap:10px;
 
 .hero{
 min-height:70vh;
-padding:20px;
-}
-
-.hero h1{
-font-size:32px;
-}
-
-.hero p{
-font-size:16px;
+padding:30px 15px;
 }
 
 .features{
@@ -265,8 +268,8 @@ grid-template-columns:1fr;
 
 nav ul{
 flex-direction:column;
-gap:12px;
 align-items:center;
+gap:12px;
 }
 
 .logo{
